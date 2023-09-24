@@ -16,7 +16,6 @@ def book_date(request, pub_date):
     books_next = (Book.objects.filter(pub_date__gt=pub_date).order_by('pub_date').first())
     if books_next:
         books_next = str(books_next.pub_date)
-    # books_next = str(Book.objects.filter(pub_date__gt=pub_date).order_by('pub_date').first().pub_date)
     else:
         books_next = None
     books_previous = Book.objects.filter(pub_date__lt=pub_date).order_by('pub_date').first()
@@ -24,7 +23,6 @@ def book_date(request, pub_date):
         books_previous = str(books_previous.pub_date)
     else:
         books_previous = None
-        #books_previous = str(Book.objects.filter(pub_date__lt=pub_date).order_by('pub_date').first().pub_date)
     context = {
         'books': books_objects,
         'next_book': books_next,
