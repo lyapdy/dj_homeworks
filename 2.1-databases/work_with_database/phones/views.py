@@ -28,19 +28,3 @@ def show_product(request, slug):
     phone_objects = Phone.objects.filter(slug=slug)
     context = {'phones': phone_objects}
     return render(request, template, context)
-    
-    
-
-# def create_phone_bd(request):
-#     MbPh = Phones()
-#     for items in MbPh.handle():
-#         brand = Phone(
-#             name = items['name'],
-#             price = items['price'],
-#             image = items['image'],
-#             release_date = items['release_date'],
-#             lte_exists = items['lte_exists'],
-#             slug = slugify(items['name']))
-#         brand.save()
-#
-#     return HttpResponse('Все получилось.')
