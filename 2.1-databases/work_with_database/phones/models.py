@@ -4,8 +4,7 @@ from django.db import models
 
 class Phone(models.Model):
    
-    # TODO: Добавьте требуемые поля
-    id = models.AutoField(primary_key=True) 
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=200)
     price = models.DecimalField(max_digits=8, decimal_places=0)
     image = models.ImageField()

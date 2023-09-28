@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from phones.models import Phone
-from phones.import_phones import Phones
+# from phones.import_phones import Phones
 from django.template.defaultfilters import slugify
 
 
@@ -31,16 +31,16 @@ def show_product(request, slug):
     
     
 
-def create_phone_bd(request):
-    MbPh = Phones()
-    for items in MbPh.handle():
-        brand = Phone(
-            name = items['name'],
-            price = items['price'],
-            image = items['image'],
-            release_date = items['release_date'],
-            lte_exists = items['lte_exists'],
-            slug = slugify(items['name']))
-        brand.save()
-
-    return HttpResponse ('Все получилось.')
+# def create_phone_bd(request):
+#     MbPh = Phones()
+#     for items in MbPh.handle():
+#         brand = Phone(
+#             name = items['name'],
+#             price = items['price'],
+#             image = items['image'],
+#             release_date = items['release_date'],
+#             lte_exists = items['lte_exists'],
+#             slug = slugify(items['name']))
+#         brand.save()
+#
+#     return HttpResponse('Все получилось.')
