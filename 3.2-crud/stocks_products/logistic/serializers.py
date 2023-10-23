@@ -24,7 +24,6 @@ class StockSerializer(serializers.ModelSerializer):
         for pos in positions:
             new_stock_product = StockProduct.objects.create(product=pos['product'], stock=stock, quantity=pos['quantity'],
                                                            price=pos['price'])
-            stock.positions.add(new_stock_product)
         return stock
 
     def update(self, instance, validated_data):
