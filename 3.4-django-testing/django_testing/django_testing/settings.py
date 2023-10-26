@@ -80,8 +80,6 @@ WSGI_APPLICATION = 'django_testing.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'USER': 'postgres',
-        'PASSWORD': 'qazxswedc123',
         'NAME': 'netology_stocks_products',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
